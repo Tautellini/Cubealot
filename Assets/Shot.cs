@@ -70,7 +70,7 @@ public class Shot : MonoBehaviour
         if(other.gameObject.tag == "Enemy")
         {
             Debug.Log("Hit enemy!");
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
