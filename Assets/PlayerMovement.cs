@@ -12,10 +12,15 @@ public class PlayerMovement : MonoBehaviour
     bool isShooting;
     public float waitTime;
     float wait = 0f;
+    public GameObject shot;
+
+    public int shotRate = 5;
+    int shotRateTimer = 0;
     // Start is called before the first frame update
     void Start()
     {
         isMoving = false;
+        gm.roundChanged.AddListener(ReduceShotRateTimer);
     }
 
     // Update is called once per frame
@@ -73,8 +78,17 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {
-
+                if (shotRateTimer <= 0)
+                {
+                    GameObject obj = Instantiate(shot, transform.position + Vector3.right, Quaternion.identity, transform.parent);
+                    obj.GetComponent<Shot>().Direction = Vector3.right;
+                    shotRateTimer = shotRate;
+                }
             }
         }
+    }
+    public void ReduceShotRateTimer()
+    {
+        shotRateTimer--;
     }
 }

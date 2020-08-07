@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 2.0f;
         roundChanged.AddListener(MakeMoves);
     }
 

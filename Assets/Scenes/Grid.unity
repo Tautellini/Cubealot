@@ -286,7 +286,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1846907968}
   speed: 3
-  waitTime: 0
+  waitTime: 1
+  shot: {fileID: 6181600999411527091, guid: 61305e02f2e1eb5488d1a307b30a48a4, type: 3}
+  shotRate: 5
 --- !u!65 &366018305
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -645,6 +647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FriendlyShot
       objectReference: {fileID: 0}
+    - target: {fileID: 6181600999411527091, guid: 61305e02f2e1eb5488d1a307b30a48a4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61305e02f2e1eb5488d1a307b30a48a4, type: 3}
 --- !u!4 &1196103400 stripped
@@ -652,23 +658,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 276327294512704711, guid: 61305e02f2e1eb5488d1a307b30a48a4, type: 3}
   m_PrefabInstance: {fileID: 1196103399}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1196103401 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6181600999411527091, guid: 61305e02f2e1eb5488d1a307b30a48a4, type: 3}
-  m_PrefabInstance: {fileID: 1196103399}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1196103402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196103401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81d03cb25e568d04489389397b9035bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1412877544
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +673,7 @@ GameObject:
   - component: {fileID: 1412877546}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -723,7 +712,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412877544}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
